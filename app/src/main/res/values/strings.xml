@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Contacts</string>
+
+    <string name="caption_favorite_contacts">FAVORITE CONTACTS</string>
+    <string name="caption_other_contacts">OTHER CONTACTS</string>
+
+    <string name="title_activity_contacts">Contacts</string>
+
+    <string name="action_favorite">Mark Favorite</string>
+    <string name="action_unfavorite">Unmark Favorite</string>
+</resources>

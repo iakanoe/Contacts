@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="contact"
+            type="io.github.iakanoe.contacts.domain.model.Contact" />
+    </data>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:paddingHorizontal="8dp"
+            android:paddingVertical="16dp">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/contactImage"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_user_large"
+                app:imageUrl="@{contact.largeImageURL}"
+                app:layout_constraintBottom_toTopOf="@id/contactName"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/contactName"
+                style="@style/TextAppearance.AppCompat.Headline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="32dp"
+                android:text="@{contact.name}"
+                app:layout_constraintBottom_toTopOf="@+id/view"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/appCompatImageView2" />
+
+            <include
+                layout="@layout/item_contact_details"
+                app:invisible="@{contact.companyName == null || contact.companyName.empty}"
+                app:title="@{`COMPANY`}"
+                app:value="@{contact.companyName}" />
+
+            <include
+                layout="@layout/item_contact_details"
+                app:extra="@{`HOME`}"
+                app:invisible="@{contact.phone.home == null || contact.phone.home.empty}"
+                app:title="@{`PHONE`}"
+                app:value="@{contact.phone.home}" />
+
+            <include
+                layout="@layout/item_contact_details"
+                app:extra="@{`MOBILE`}"
+                app:invisible="@{contact.phone.mobile == null || contact.phone.mobile.empty}"
+                app:title="@{`PHONE`}"
+                app:value="@{contact.phone.mobile}" />
+
+            <include
+                layout="@layout/item_contact_details"
+                app:extra="@{`WORK`}"
+                app:invisible="@{contact.phone.work == null || contact.phone.work.empty}"
+                app:title="@{`PHONE`}"
+                app:value="@{contact.phone.work}" />
+
+            <include
+                layout="@layout/item_contact_details"
+                app:title="@{`ADDRESS`}"
+                app:value="@{contact.address.toReadableString()}" />
+
+            <include
+                layout="@layout/item_contact_details"
+                app:title="@{`BIRTHDATE`}"
+                app:value="@{contact.birthdate}" />
+
+            <include
+                layout="@layout/item_contact_details"
+                app:title="@{`EMAIL`}"
+                app:value="@{contact.emailAddress}" />
+
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+    </androidx.core.widget.NestedScrollView>
+</layout>
