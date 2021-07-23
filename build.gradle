@@ -24,7 +24,7 @@ allprojects {
     }
 
     /* TODO add this back when the issue is solved and the plugin works
-       https://github.com/nebula-plugins/gradle-lint-plugin/issues/318
+       https://github.com/nebula-plugins/gradle-lint-plugin/issues/342
      */
     // apply plugin: "nebula.lint"
     // gradleLint.rules = ["all-dependency"]
