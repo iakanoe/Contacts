@@ -17,6 +17,7 @@
         <activity
             android:name="io.github.iakanoe.contacts.ui.contacts.ContactsActivity"
             android:label="@string/title_activity_contacts"
+            android:exported="true"
             android:screenOrientation="fullSensor">
 
             <intent-filter>
