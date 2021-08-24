@@ -12,7 +12,7 @@ Using:
 - **Kotlin Coroutines** for all asynchronous operations
 - **Retrofit** for HTTP requests
 - **Room** for data persistence
-- **Koin** for dependency injection
+- **Hilt** for dependency injection
 
 
 Future plans:
