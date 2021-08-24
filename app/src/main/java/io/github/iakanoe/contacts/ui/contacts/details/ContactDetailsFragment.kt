@@ -3,16 +3,18 @@ package io.github.iakanoe.contacts.ui.contacts.details
 import android.os.Bundle
 import android.view.*
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
+import dagger.hilt.android.AndroidEntryPoint
 import io.github.iakanoe.contacts.R
 import io.github.iakanoe.contacts.databinding.FragmentContactDetailsBinding
 import io.github.iakanoe.contacts.domain.model.Contact
 import io.github.iakanoe.contacts.ui.contacts.ContactViewModel
 import io.github.iakanoe.contacts.ui.contacts.ContactsActivity
-import org.koin.androidx.viewmodel.ext.android.sharedViewModel
 
+@AndroidEntryPoint
 class ContactDetailsFragment : Fragment() {
 
-    private val contactViewModel: ContactViewModel by sharedViewModel()
+    private val contactViewModel: ContactViewModel by activityViewModels()
 
     private var binding: FragmentContactDetailsBinding? = null
 

@@ -4,8 +4,9 @@ import io.github.iakanoe.contacts.data.ContactApiService
 import io.github.iakanoe.contacts.domain.model.Contact
 import io.github.iakanoe.contacts.source.api.ContactApi
 import io.github.iakanoe.contacts.source.mapper.Mapper
+import javax.inject.Inject
 
-class ContactApiServiceImpl(private val api: ContactApi) : ContactApiService {
+class ContactApiServiceImpl @Inject constructor(private val api: ContactApi) : ContactApiService {
     override suspend fun getContacts(): List<Contact> {
         return api.getContacts().map { Mapper.dtoToContact(it) }
     }

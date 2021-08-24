@@ -5,22 +5,24 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.material.snackbar.Snackbar
+import dagger.hilt.android.AndroidEntryPoint
 import io.github.iakanoe.contacts.databinding.FragmentContactListBinding
 import io.github.iakanoe.contacts.domain.model.Contact
 import io.github.iakanoe.contacts.ui.contacts.ContactViewModel
 import io.github.iakanoe.contacts.ui.contacts.ContactsActivity
 import io.github.iakanoe.contacts.util.setVisible
 import kotlinx.coroutines.flow.collect
-import org.koin.androidx.viewmodel.ext.android.sharedViewModel
 
+@AndroidEntryPoint
 class ContactListFragment : Fragment(), ContactItemListener {
 
-    private val contactViewModel: ContactViewModel by sharedViewModel()
+    private val contactViewModel: ContactViewModel by activityViewModels()
 
     private lateinit var favoritesAdapter: ContactListAdapter
     private lateinit var othersAdapter: ContactListAdapter

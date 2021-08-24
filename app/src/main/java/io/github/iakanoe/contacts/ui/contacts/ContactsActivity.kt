@@ -3,8 +3,10 @@ package io.github.iakanoe.contacts.ui.contacts
 import android.os.Bundle
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
+import dagger.hilt.android.AndroidEntryPoint
 import io.github.iakanoe.contacts.databinding.ActivityContactsBinding
 
+@AndroidEntryPoint
 class ContactsActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

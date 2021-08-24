@@ -2,14 +2,17 @@ package io.github.iakanoe.contacts.ui.contacts
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import dagger.hilt.android.lifecycle.HiltViewModel
 import io.github.iakanoe.contacts.domain.model.Contact
 import io.github.iakanoe.contacts.usecase.GetContactListUseCase
 import io.github.iakanoe.contacts.usecase.UpdateContactUseCase
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
-class ContactViewModel constructor(
+@HiltViewModel
+class ContactViewModel @Inject constructor(
     private val getContactListUseCase: GetContactListUseCase, private val updateContactUseCase: UpdateContactUseCase
 ) : ViewModel() {
 
