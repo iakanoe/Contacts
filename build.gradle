@@ -1,6 +1,6 @@
 buildscript {
     ext {
-        kotlin_version = "1.5.20"
+        kotlin_version = "1.6.10"
     }
     repositories {
         google()
@@ -9,8 +9,8 @@ buildscript {
 
     dependencies {
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
-        classpath "com.android.tools.build:gradle:4.2.2"
-        classpath "androidx.navigation:navigation-safe-args-gradle-plugin:2.3.5"
+        classpath "com.android.tools.build:gradle:7.0.4"
+        classpath "androidx.navigation:navigation-safe-args-gradle-plugin:2.4.1"
 
         // TODO read line 26
         // classpath "com.netflix.nebula:gradle-lint-plugin:16.26.0"
